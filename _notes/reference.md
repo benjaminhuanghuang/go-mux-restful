@@ -3,4 +3,4 @@
 -[Create A Simple RESTful API With Golang](https://www.youtube.com/watch?v=t96hBT53S4U&list=PLII40EOBF0-voAGYkZHVipwlIVfgVxSQT&index=23)
 
 - Golang / Go Crash Course 01 | Building a REST API with Mux (2020)
-
+https://www.youtube.com/watch?v=x5GGLrTuQCA&list=PL3eAkoh7fypqUQUQPn-bXtfiYT_ZSVKmB&index=8&ab_channel=PragmaticReviews

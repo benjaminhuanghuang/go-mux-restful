@@ -1,4 +1,4 @@
-module go-rest-api
+module restful-architecture
 
 go 1.15
 
