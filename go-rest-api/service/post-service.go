@@ -18,10 +18,11 @@ type service struct {
 }
 
 var (
-	repo repository.PostRepository = repository.NewFirestorePostRepository()
+	repo repository.PostRepository
 )
 
-func NewPostService() PostService {
+func NewPostService(repo repository.PostRepository) PostService {
+
 	return &service{}
 }
 

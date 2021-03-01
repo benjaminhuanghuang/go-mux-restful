@@ -10,13 +10,20 @@ import (
 	"../service"
 )
 
+type controller struct{}
+
 var (
-	postService service.PostService = service.NewPostService()
+	postService service.PostService
 )
 
 type PostController interface {
 	GetPosts(resp http.ResponseWriter, req *http.Request)
 	AddPosts(resp http.ResponseWriter, req *http.Request)
+}
+
+func NewPostController(service service.PostService) PostController {
+	postService = service
+	return &controller{}
 }
 
 func GetPosts(resp http.ResponseWriter, req *http.Request) {

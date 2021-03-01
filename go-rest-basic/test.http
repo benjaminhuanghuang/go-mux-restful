@@ -1,0 +1,6 @@
+###
+GET http://localhost:8964 HTTP/1.1
+
+###
+
+GET http://example.com/topics/1 HTTP/1.1

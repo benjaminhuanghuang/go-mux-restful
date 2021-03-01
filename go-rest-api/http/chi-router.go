@@ -4,30 +4,30 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/gorilla/mux"
+	"github.com/go-chi/chi"
 )
 
 type chiRouter struct {
 }
 
 var (
-	muxDispatcher = mux.NewRouter()
+	chiDispatcher = chi.NewRouter()
 )
 
 func NewChiRouter() Router {
 	return &chiRouter{}
 }
 
-func (*muxRouter) GET(uri string, f func(w http.ResponseWriter, r *http.Request)) {
-	muxDispatcher.HandleFunc(uri, f).Methods("GET")
+func (*chiRouter) GET(uri string, f func(w http.ResponseWriter, r *http.Request)) {
+	chiDispatcher.Get(uri, f)
 }
 
-func (*muxRouter) POST(uri string, f func(w http.ResponseWriter, r *http.Request)) {
-	muxDispatcher.HandleFunc(uri, f).Methods("POST")
+func (*chiRouter) POST(uri string, f func(w http.ResponseWriter, r *http.Request)) {
+	chiDispatcher.Post(uri, f)
 
 }
 
-func (*muxRouter) SERVE(port string) {
-	fmt.Printf("Mux HTTP serveer running on port %v", port)
-	http.ListenAndServe(port, muxDispatcher)
+func (*chiRouter) SERVE(port string) {
+	fmt.Printf("Chi HTTP serveer running on port %v", port)
+	http.ListenAndServe(port, chiDispatcher)
 }
